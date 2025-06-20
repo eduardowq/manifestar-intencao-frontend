@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container"> 
+  <mat-sidenav #drawer mode="side" opened class="sidenav" role="navigation">
+    <mat-toolbar color="primary" class="sidenav-header">
+      <span class="sidenav-title" style="color:#005cbb">Manifestar Intenção</span>
+    </mat-toolbar>
+
+    <mat-nav-list class="no-radius-menu">
+      <a mat-list-item routerLink="/disciplinas" routerLinkActive="active">
+        <mat-icon class="menu-icon">menu_book</mat-icon>
+        <span class="menu-text">Disciplinas</span>
+      </a>
+      <a mat-list-item routerLink="/docentes" routerLinkActive="active">
+        <mat-icon class="menu-icon">person</mat-icon>
+        <span class="menu-text">Docentes</span>
+      </a>
+      <a mat-list-item routerLink="/nucleos" routerLinkActive="active">
+        <mat-icon class="menu-icon">account_tree</mat-icon>
+        <span class="menu-text">Núcleos</span>
+      </a>
+      <a mat-list-item routerLink="/turmas" routerLinkActive="active">
+        <mat-icon class="menu-icon">groups</mat-icon>
+        <span class="menu-text">Turmas</span>
+      </a>
+      <a mat-list-item routerLink="/manifestacoes" routerLinkActive="active">
+        <mat-icon class="menu-icon">assignment</mat-icon>
+        <span class="menu-text">Manifestações</span>
+      </a>
+    </mat-nav-list>
+
+    <div class="sidenav-footer">
+      <small>Versão 1.0.0</small>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
