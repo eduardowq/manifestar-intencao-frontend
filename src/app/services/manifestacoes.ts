@@ -4,10 +4,11 @@ import { Observable } from 'rxjs';
 
 export interface Manifestacao {
   id: number;
-  docente: { nome: string };
+  disciplina: { nome: string };
   turma: { id: number };
   turnoPreferido: string;
   status: string;
+  selecionado?: boolean;
 }
 
 @Injectable({
