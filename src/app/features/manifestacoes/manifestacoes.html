@@ -8,16 +8,10 @@
     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
 
-  <!-- Docente Column -->
-  <ng-container matColumnDef="docente">
-    <th mat-header-cell *matHeaderCellDef> Docente </th>
-    <td mat-cell *matCellDef="let element"> {{element.docente.nome}} </td>
-  </ng-container>
-
-  <!-- Turma Column -->
-  <ng-container matColumnDef="turma">
-    <th mat-header-cell *matHeaderCellDef> Turma </th>
-    <td mat-cell *matCellDef="let element"> {{element.turma.id}} </td>
+  <!-- Disciplina Column -->
+  <ng-container matColumnDef="disciplina">
+    <th mat-header-cell *matHeaderCellDef> Disciplina </th>
+    <td mat-cell *matCellDef="let element">{{element.disciplina.nome || 'Não informado'}} </td>
   </ng-container>
 
   <!-- Turno Preferido -->
@@ -30,6 +24,17 @@
   <ng-container matColumnDef="status">
     <th mat-header-cell *matHeaderCellDef> Status </th>
     <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+
+  <!-- Checkbox Column -->
+  <ng-container matColumnDef="selecionado">
+    <th mat-header-cell *matHeaderCellDef> Selecionar </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-checkbox 
+        [checked]="element.selecionado"
+        (change)="onCheckboxChange(element, $event)">
+      </mat-checkbox>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
